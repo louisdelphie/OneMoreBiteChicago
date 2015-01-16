@@ -83,7 +83,95 @@ li {
 .navbar-toggle {
     border: none;
 }
-/* container-padding, panel-padding and col-menu*/
+/* ribbons */
+
+.ribbon-wrapper {
+    height: 200px;
+    overflow: hidden;
+    position: absolute;
+    z-index: 90;
+    &.tplft {
+        top: -3px;
+        left: -3px;
+    }
+    &.bttmrght {
+        right: -3px;
+        bottom: -3px;
+    }
+}
+.corner-ribbon {
+    width: 200px;
+    background: #e43;
+    top: 25px;
+    left: -50px;
+    text-align: center;
+    font-family: "droid-serif", sans-serif;
+    font-size: 20px;
+    line-height: 50px;
+    letter-spacing: 2px;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    padding: 2px 0px 2px 0px;
+    position: relative;
+    > .border {
+        border-top: 1px dashed #8FD2CB;
+        border-bottom: 1px dashed #8FD2CB;
+        > img {
+            float: left;
+            margin: -15px 0px 0px 40px;
+        }
+    }
+    &.shadow {
+        box-shadow: 0 0px 7px rgba(0, 0, 0, .8);
+    }
+    &.pink {
+        background-color: #fb0096;
+        background-image: linear-gradient(180deg, #fb0096, #62003b);
+    }
+    &:before,
+    &:after {
+        content: "";
+        border-left: 3px solid transparent;
+        border-right: 3px solid transparent;
+        position: absolute;
+    }
+    &.bottom-right {
+        top: auto;
+        right: -55px;
+        bottom: -130px;
+        left: auto;
+        &.pink {
+            &:before, &:after {
+                border-bottom: 3px solid #2d001b;
+                ;
+                top: -3px;
+            }
+            &:before {
+                left: 9px;
+            }
+            &:after {
+                right: 7px;
+            }
+        }
+    }
+    &.top-left {
+        top: 19px;
+        left: -53px;
+        &.pink {
+            &:before, &:after {
+                border-top: 3px solid #2d001b;
+                bottom: -5px;
+            }
+            &:before {
+                left: 0;
+            }
+            &:after {
+                right: 0;
+            }
+        }
+    }
+}
+/*custom container-padding, custom panel */
 
 .container-padding {
     padding: 230px 0 0 0;
@@ -91,9 +179,9 @@ li {
         padding: 60px 10px 0 10px;
     }
 }
-
-.panel{
-   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.09);
+.panel {
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.09);
+    font-family: "droid-serif", sans-serif;
 }
 .panel-heading {
     text-align: center;
@@ -110,11 +198,9 @@ li {
     max-height: 510px;
     overflow-y: hidden;
 }
-
-.affix-bottom{
+.affix-bottom {
     position: absolute;
 }
-
 div.row-background {
     background: rgba(255, 255, 255, 0.9);
     padding: 20px;
@@ -122,11 +208,7 @@ div.row-background {
     @include border-top-radius(10px);
     @include border-bottom-radius(10px);
     box-shadow: 8px 8px 24px 8px rgba(0, 0, 0, 0.75);
-}
-/* custom panel fonts */
-
-.panel {
-    font-family: "droid-serif", sans-serif;
+    position: relative;
 }
 .list-g-item {
     border: none;
@@ -136,30 +218,11 @@ div.row-background {
         color: $text-color;
     }
 }
-.cupcake-selected{
+.cupcake-selected {
     font-style: italic;
 }
 #image {
     margin: 15px;
-}
-@media screen and (min-width: 768px) {
-    a {
-        &.navbar-brand {
-            font-family: bilbo-swash-caps;
-            padding: 20px 80px 0px;
-            font-size: 36px;
-            line-height: 30px;
-            letter-spacing: 18px;
-            color: $secondary-text-color;
-            .brand_small {
-                font-family: "droid-serif", sans-serif;
-                padding: 0px 50px;
-                font-size: 18px;
-                line-height: 1px;
-                letter-spacing: 0px;
-            }
-        }
-    }
 }
 /* Custom page footer */
 
@@ -261,5 +324,22 @@ div.row-background {
 @media screen and (min-width: 768px) {
     .container {
         max-width: 730px;
+    }
+    a {
+        &.navbar-brand {
+            font-family: bilbo-swash-caps;
+            padding: 20px 80px 0px;
+            font-size: 36px;
+            line-height: 30px;
+            letter-spacing: 18px;
+            color: $secondary-text-color;
+            .brand_small {
+                font-family: "droid-serif", sans-serif;
+                padding: 0px 50px;
+                font-size: 18px;
+                line-height: 1px;
+                letter-spacing: 0px;
+            }
+        }
     }
 }
