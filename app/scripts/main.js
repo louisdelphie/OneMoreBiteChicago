@@ -65,6 +65,7 @@ function toggleNav(event) {
         // overlay the page out the nav
         event.preventDefault();
         $('div.overlay').fadeToggle('slow');
+
     }
 }
 
@@ -121,6 +122,16 @@ function swapImage($this) {
 
 }
 
+function toggleDropdown(title){
+    //var title = $this.attr('title');
+
+    if(title === 'One More Bite - Menu' && $(window).width() < 768)
+    {
+        $('.dropdown-menu').dropdown('toggle');
+        toggleNav();
+    }
+}
+
 /*====================================
 =            ON DOM READY            =
 ====================================*/
@@ -129,6 +140,9 @@ $(function () {
         event.preventDefault();
         toggleNav();
     });
+
+    toggleDropdown($(this).attr('title'));
+
 });
 
 /*====================================

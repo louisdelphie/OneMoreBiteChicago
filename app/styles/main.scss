@@ -39,15 +39,15 @@ header {
         display: table;
         table-layout: fixed;
         float: none;
-        & > .active > a {
+         > .active > a {
             border-radius: $border-radius-large;
         }
-        & > .logo > a {
+         > .logo > a {
             &:focus, &:hover {
                 background-color: transparent;
             }
         }
-        & > li {
+         > li {
             height: 76px;
             margin: 0px 10px;
             > a {
@@ -58,8 +58,8 @@ header {
         }
         @media screen and (max-width: 767px) {
             margin: 30px auto;
-            & > li {
-                height: 50px;
+             > li {
+                height: auto;
                 margin: 0px 5px;
             }
         }
@@ -210,7 +210,7 @@ div.row-background {
     box-shadow: 8px 8px 24px 8px rgba(0, 0, 0, 0.75);
     position: relative;
     @media screen and (max-width: 767px) {
-        height: 450px;
+        height: 435px;
     }
     @media screen and (max-width: 321px) {
         height: 350px;
@@ -243,6 +243,7 @@ div.row-background {
         margin: 20px 0 0 0px;
     }
 }
+
 
 /* Custom page footer */
 
@@ -312,7 +313,7 @@ div.row-background {
     }
     #site-menu {
         width: 200px;
-        height: 1000px;
+        height: 100vh;
         position: absolute;
         top: 0;
         right: -200px;
@@ -321,6 +322,10 @@ div.row-background {
         .close {
             font-size: 30px;
             text-shadow: 0 3px 0 $primary-lighter;
+        }
+        &.scrollable{
+            max-height: 100vh;
+            overflow-x: hidden;
         }
     }
     .navbar {
@@ -337,6 +342,10 @@ div.row-background {
                 max-height: $centered-navigation-logo-height / 2.5;
             }
         }
+    }
+    .sub > li{
+        list-style: none;
+        margin-top: 5px;
     }
 }
 /* Responsive: Portrait tablets and up */
@@ -360,6 +369,19 @@ div.row-background {
                 line-height: 1px;
                 letter-spacing: 0px;
             }
+        }
+    }
+    .navbar-nav > li > .dropdown-menu{
+        margin-top: 2px;
+        float: none;
+    }
+    .open > .dropdown-menu{
+        display: inline-flex;
+    }
+    .dropdown-menu > li {
+        padding: 0px 2px;
+        a:focus, a:hover {
+            border-radius: $border-radius-base;
         }
     }
 }

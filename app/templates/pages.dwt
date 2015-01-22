@@ -65,7 +65,7 @@
     		          	 <img src="../images/site/headerlogo_small.png" alt="onemorelogo" class="header_img clearfix img-responsive logo">
     		          </a>
     		        </div>
-    		        <div id="site-menu">
+    		        <div id="site-menu" class="scrollable" aria-expanded="true">
                     <button type="button" class="close toggle visible-xs" aria-label="Close"><span aria-hidden="true">&times;</span></button>
     		          <ul class="nav navbar-nav">
     		          	<!-- TemplateBeginEditable name="navbar" -->
